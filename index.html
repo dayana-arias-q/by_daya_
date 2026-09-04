@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dayana Arias</title>
+    <meta
+      name="description"
+      content="Portfolio de Dayana Arias, ilustradora apasionada por contar historias que conectan con las personas."
+    />
+    <link rel="icon" type="image/png" href="assets/By_dayabanner.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #fffaf6;
+        --bg-2: #f8f2ff;
+        --paper: #fffdfd;
+        --ink: #2e2a39;
+        --muted: #6d7280;
+        --line: rgba(38, 27, 42, 0.08);
+        --soft-shadow: 0 16px 32px rgba(47, 43, 57, 0.12);
+        --radius-xl: 24px;
+        --radius-md: 18px;
+        --folder-1: #f8e7d6;
+        --folder-2: #e3f2e9;
+        --folder-3: #f4e4f8;
+        --folder-4: #e7effd;
+        --folder-5: #f9f3d6;
+        --folder-6: #fceae3;
+        --folder-7: #dfeef9;
+        --folder-tab-1: #e2c6a4;
+        --folder-tab-2: #beddc7;
+        --folder-tab-3: #d8b6e6;
+        --folder-tab-4: #bfd2f7;
+        --folder-tab-5: #e9d585;
+        --folder-tab-6: #ecc3ad;
+        --folder-tab-7: #b7d2eb;
+        --brand-ig: #d62976;
+        --brand-behance: #1769ff;
+        --brand-tiktok: #000000;
+        --brand-youtube: #ff0000;
+        --brand-pinterest: #e60023;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: linear-gradient(180deg, var(--bg) 0%, #fff 20%, #fffaf3 100%);
+        color: var(--ink);
+        font-family: "Quicksand", sans-serif;
+        line-height: 1.6;
+      }
+
+      img,
+      iframe {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .hero {
+        position: relative;
+        z-index: 1;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem 1.25rem 5rem;
+      }
+
+      .hero-inner {
+        width: min(760px, 100%);
+        text-align: center;
+      }
+
+      .hero-gif {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto 1.25rem;
+        background: transparent;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        color: var(--ink);
+      }
+
+      .hero-copy {
+        max-width: 500px;
+        margin: 0.9rem auto 0;
+        color: var(--muted);
+        font-size: 1rem;
+      }
+
+      .socials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 1.75rem;
+      }
+
+      .social-link {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.75);
+        border: 1px solid rgba(46, 42, 57, 0.06);
+        transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 3px 10px rgba(44, 38, 52, 0.06);
+      }
+
+      .social-link svg {
+        width: 20px;
+        height: 20px;
+        display: block;
+        fill: #7b7d89;
+        transition: fill 0.3s ease, transform 0.3s ease;
+      }
+
+      .social-link:hover,
+      .social-link:focus-visible {
+        transform: scale(1.1);
+      }
+
+      .social-link:hover svg,
+      .social-link:focus-visible svg {
+        fill: #fff;
+      }
+
+      .social-link.instagram:hover,
+      .social-link.instagram:focus-visible {
+        background: linear-gradient(135deg, #feda75 0%, #fa7e1e 18%, #d62976 42%, #962fbf 68%, #4f5bd5 100%);
+      }
+
+      .social-link.behance:hover,
+      .social-link.behance:focus-visible {
+        background: #1769ff;
+      }
+
+      .social-link.tiktok:hover,
+      .social-link.tiktok:focus-visible {
+        background: #000000;
+      }
+
+      .social-link.youtube:hover,
+      .social-link.youtube:focus-visible {
+        background: #ff0000;
+      }
+
+      .social-link.pinterest:hover,
+      .social-link.pinterest:focus-visible {
+        background: #e60023;
+      }
+
+      .scroll-indicator {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
+        margin-top: 2.2rem;
+        color: var(--muted);
+        font-size: 0.76rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        animation: bounce 1.8s infinite ease-in-out;
+      }
+
+      .scroll-indicator .chevron {
+        width: 12px;
+        height: 12px;
+        border-right: 2px solid var(--muted);
+        border-bottom: 2px solid var(--muted);
+        transform: rotate(45deg);
+        display: inline-block;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(8px);
+        }
+      }
+
+      .stack-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 4rem;
+      }
+
+      .folder {
+        --offset: calc((var(--folder-index) - 1) * 48px);
+        position: sticky;
+        top: 0;
+        z-index: var(--folder-index);
+        width: min(90vw, 900px);
+        margin: 0 auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-top: 0;
+      }
+
+      .folder:not(:first-child) {
+        margin-top: var(--offset);
+      }
+
+      .folder-tab {
+        position: relative;
+        width: auto;
+        max-width: min(220px, 60vw);
+        padding: 0.8rem 1.15rem 0.65rem;
+        clip-path: polygon(0 0, 90% 0, 100% 100%, 0 100%);
+        border-radius: 12px 12px 0 0;
+        background: var(--folder-tab-color);
+        color: rgba(29, 26, 37, 0.88);
+        font-weight: 700;
+        font-size: 0.92rem;
+        letter-spacing: 0.02em;
+        box-shadow: 0 -10px 12px rgba(42, 33, 53, 0.04);
+        transition: background 0.25s ease, transform 0.25s ease;
+      }
+
+      .folder.active .folder-tab {
+        background: color-mix(in srgb, var(--folder-tab-color) 68%, #ffffff 32%);
+        transform: translateY(-2px);
+      }
+
+      .folder-body {
+        position: relative;
+        width: 100%;
+        height: min(75vh, 620px);
+        min-height: 480px;
+        background: var(--folder-color);
+        border-radius: 0 20px 20px 20px;
+        border: 1px solid rgba(49, 38, 59, 0.05);
+        overflow: hidden;
+        box-shadow: var(--soft-shadow);
+      }
+
+      .folder-body iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background: rgba(255, 255, 255, 0.35);
+      }
+
+      .folder-1 { --folder-color: var(--folder-1); --folder-tab-color: var(--folder-tab-1); }
+      .folder-2 { --folder-color: var(--folder-2); --folder-tab-color: var(--folder-tab-2); }
+      .folder-3 { --folder-color: var(--folder-3); --folder-tab-color: var(--folder-tab-3); }
+      .folder-4 { --folder-color: var(--folder-4); --folder-tab-color: var(--folder-tab-4); }
+      .folder-5 { --folder-color: var(--folder-5); --folder-tab-color: var(--folder-tab-5); }
+      .folder-6 { --folder-color: var(--folder-6); --folder-tab-color: var(--folder-tab-6); }
+      .folder-7 { --folder-color: var(--folder-7); --folder-tab-color: var(--folder-tab-7); }
+
+      .contact {
+        padding: 4rem 1.5rem 5rem;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(248, 241, 255, 0.55) 100%);
+      }
+
+      .contact-inner {
+        width: min(560px, 100%);
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .contact h2 {
+        margin: 0 0 1.5rem;
+        font-size: clamp(1.8rem, 3vw, 2.2rem);
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+        padding: 1rem 1.2rem;
+        border-radius: var(--radius-md);
+        background: rgba(255, 255, 255, 0.78);
+        box-shadow: 0 12px 24px rgba(84, 73, 95, 0.08);
+        border: 1px solid rgba(65, 58, 79, 0.04);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .contact-item:hover,
+      .contact-item:focus-visible {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 24px rgba(84, 73, 95, 0.12);
+      }
+
+      .contact-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.9);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--ink);
+        flex-shrink: 0;
+      }
+
+      .contact-icon svg {
+        width: 24px;
+        height: 24px;
+        display: block;
+        fill: currentColor;
+      }
+
+      .contact-item:hover .contact-icon,
+      .contact-item:focus-visible .contact-icon {
+        color: #fff;
+      }
+
+      .contact-item.email:hover .contact-icon,
+      .contact-item.email:focus-visible .contact-icon {
+        background: linear-gradient(135deg, #ffd7d7, #ff8ea1);
+      }
+
+      .contact-item.phone:hover .contact-icon,
+      .contact-item.phone:focus-visible .contact-icon {
+        background: linear-gradient(135deg, #d8f8ff, #7dd1ff);
+      }
+
+      .contact-item.whatsapp:hover .contact-icon,
+      .contact-item.whatsapp:focus-visible .contact-icon {
+        background: linear-gradient(135deg, #87f1b3, #2ec97a);
+      }
+
+      .contact-label {
+        font-size: 0.82rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 0.1rem;
+      }
+
+      .contact-value {
+        font-weight: 700;
+        color: var(--ink);
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          padding-top: 2.5rem;
+        }
+
+        .hero-gif {
+          width: 60px;
+          height: 60px;
+        }
+
+        .social-link {
+          width: 36px;
+          height: 36px;
+        }
+
+        .social-link svg {
+          width: 18px;
+          height: 18px;
+        }
+
+        .folder {
+          width: min(92vw, 900px);
+        }
+
+        .folder-tab {
+          max-width: 160px;
+          padding: 0.7rem 0.9rem 0.6rem;
+          font-size: 0.8rem;
+          border-radius: 10px 10px 0 0;
+        }
+
+        .folder-body {
+          height: 65vh;
+          min-height: 340px;
+          border-radius: 0 16px 16px 16px;
+        }
+
+        .folder:not(:first-child) {
+          margin-top: calc((var(--folder-index) - 1) * 40px);
+        }
+
+        .folder {
+          --offset: calc((var(--folder-index) - 1) * 40px);
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero" aria-label="Inicio">
+      <div class="hero-inner">
+        <img
+          src="assets/gif.gif"
+          alt="Logo animado de Dayana"
+          class="hero-gif"
+        />
+        <h1>¡Hola! Soy Dayana</h1>
+        <p class="hero-copy">
+          Ilustradora apasionada por contar historias que conectan con las personas.
+        </p>
+
+        <nav class="socials" aria-label="Redes sociales">
+          <a
+            class="social-link behance"
+            href="https://www.behance.net/daya_arias"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Behance de Dayana"
+          >
+            <img src="assets/1Behance.png" alt="" />
+          </a>
+          <a
+            class="social-link linkedin"
+            href="https://www.linkedin.com/in/dayana-arias-812ab6218"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn de Dayana"
+          >
+            <img src="assets/2Linkdlin.png" alt="" />
+          </a>
+          <a
+            class="social-link tiktok"
+            href="https://www.tiktok.com/@by_daya_?_r=1&_t=ZS-99PexiFKka8"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok de Dayana"
+          >
+            <img src="assets/3Titok.png" alt="" />
+          </a>
+          <a
+            class="social-link instagram"
+            href="https://www.instagram.com/by_daya__?igsi=MWNvbGJ1cGRocGNyZg%3D%3D&utm_source=qr"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram de Dayana"
+          >
+            <img src="assets/4Instagram.png" alt="" />
+          </a>
+          <a
+            class="social-link whatsapp"
+            href="https://wa.me/573008461116?text=Hola!%20Dayana"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp de Dayana"
+          >
+            <img src="assets/5 Whatsapp.png" alt="" />
+          </a>
+        </nav>
+
+        <div class="scroll-indicator" aria-label="Desliza hacia abajo">
+          <span>Scroll</span>
+          <span class="chevron" aria-hidden="true"></span>
+        </div>
+      </div>
+    </header>
+
+    <main class="stack-wrapper" aria-label="Secciones de trabajo de Dayana">
+      <section class="folder folder-1" style="--folder-index: 1;" data-title="Conóceme">
+        <div class="folder-tab">Conóceme</div>
+        <div class="folder-body">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/vzWS84EqPA8?si=7tnm6hDPph-OoWbb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section class="folder folder-2" style="--folder-index: 2;" data-title="Mi Portafolio">
+        <div class="folder-tab">Mi Portafolio</div>
+        <div class="folder-body">
+          <iframe src="https://www.behance.net/embed/project/248657649?ilo0=1" height="316" width="404" allowfullscreen lazyload frameborder="0" allow="clipboard-write" refererPolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+      </section>
+
+      <section class="folder folder-4" style="--folder-index: 3;" data-title="Proyectos">
+        <div class="folder-tab">Proyectos</div>
+        <div class="folder-body">
+          <div class="col-lg-6">
+  <div class="behance-card" style="max-width:540px; width:100%; margin:0 auto; border-radius:14px; overflow:hidden; box-shadow:0 4px 18px rgba(0,0,0,0.12); font-family:'Helvetica Neue', Arial, sans-serif; background:#fff;">
+
+    <!-- Banner -->
+    <div style="width:100%; height:150px; overflow:hidden;">
+      <img src="https://mir-s3-cdn-cf.behance.net/bcb0de6a517b524166b64ba7082fa473/4ae284eb-c10c-4fe4-955b-c5787ebb230b_rwc_1109x0x2079x410x3200.jpg" 
+           alt="Banner de Dayana Arias" 
+           style="width:100%; height:100%; object-fit:cover; display:block;">
+    </div>
+
+    <!-- Contenido -->
+    <div style="padding:0 20px 20px 20px; text-align:center; margin-top:-45px; position:relative; z-index:2;">
+      
+      <!-- Foto de perfil -->
+      <img src="https://pps.services.adobe.com/api/profile/ED061DA265C519D00A495C90@AdobeID/image/71cf6846-0826-48b6-828a-3dfc39bf0a67/276" 
+           alt="Dayana Arias" 
+           style="width:90px; height:90px; border-radius:50%; border:4px solid #fff; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.15); display:block; margin:0 auto;">
+
+      <h3 style="margin:12px 0 4px 0; font-size:1.3rem; color:#1a1a1a;">Dayana Arias</h3>
+      <p style="margin:0 0 4px 0; font-size:0.9rem; color:#666;">Est. Diseño Gráfico · Medellín, Colombia</p>
+
+      <!-- Botón -->
+      <a href="https://www.behance.net/daya_arias" target="_blank" rel="noopener"
+         style="display:inline-block; background:#1769ff; color:#fff; text-decoration:none; font-weight:600; padding:10px 28px; border-radius:30px; font-size:0.95rem; transition:background 0.2s;">
+        Ver proyectos en Behance →
+      </a>
+
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+        </div>
+      </section>
+
+      <section class="folder folder-5" style="--folder-index: 4;" data-title="Vlogs">
+        <div class="folder-tab">Vlogs</div>
+        <div class="folder-body">
+          <div class="col-lg-6">
+              <blockquote 
+                class="tiktok-embed" 
+                cite="https://www.tiktok.com/@by_daya_" 
+                data-unique-id="by_daya_" 
+                data-embed-type="creator"
+                style="max-width:540px; width:100%;">
+                <section></section>
+              </blockquote>
+              <script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
+        </div>
+      </section>
+
+      <section class="folder folder-6" style="--folder-index: 5;" data-title="Experimentos">
+        <div class="folder-tab">Experimentos</div>
+        <div class="folder-body">
+          <div class="col-lg-6 instagram-container">
+  <blockquote 
+    class="instagram-media" 
+    data-instgrm-permalink="https://www.instagram.com/by_daya__/" 
+    data-instgrm-version="14"
+    style="max-width:540px; width:100%;">
+  </blockquote>
+  <script async src="https://www.instagram.com/embed.js"></script>
+</div>
+        </div>
+      </section>
+
+      <section class="folder folder-7" style="--folder-index: 6;" data-title="Últimamente">
+  <div class="folder-tab">Últimamente</div>
+  <div class="folder-body">
+    <div class="col-lg-6 instagram-container">
+              <blockquote 
+                class="instagram-media" 
+                data-instgrm-permalink="https://www.instagram.com/quangie.hogar/" 
+                data-instgrm-version="14"
+                style="max-width:540px; width:100%;">
+              </blockquote>
+              <script async src="https://www.instagram.com/embed.js"></script>
+            </div>
+  </div>
+</section>
+
+<!-- Contacto cierra el stacking como un bloque continuo, sin pestaña de carpeta. -->
+<section class="contact-block" style="--folder-index: 7;" aria-label="Contacto">
+  <div class="contact-inner">
+    <h2>Mi Contacto</h2>
+    <div class="contact-list">
+      <a class="contact-item email" href="mailto:dayana@ejemplo.com" aria-label="Correo de Dayana">
+        <span class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M20 6H4a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2Zm0 2-8 5-8-5h16Zm-16 8V8.53l7.47 4.67c.2.12.43.18.67.18s.47-.06.67-.18L20 8.53V16H4Z"/></svg>
+        </span>
+        <span>
+          <span class="contact-label">Correo</span><br />
+          <span class="contact-value">dayanaquinchia28@gmail.com</span>
+        </span>
+	</a>
+
+          <a class="contact-item phone" href="tel:+573001234567" aria-label="Teléfono de Dayana">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2a1.2 1.2 0 0 1 1.2-.3c1.3.43 2.7.66 4.1.66.7 0 1.3.6 1.3 1.3V20c0 .7-.6 1.3-1.3 1.3C10.8 21.3 2.7 13.2 2.7 4.3c0-.7.6-1.3 1.3-1.3h2.8c.7 0 1.3.6 1.3 1.3 0 1.4.23 2.8.66 4.1.12.45.04.94-.3 1.2l-2.2 2.2Z"/></svg>
+            </span>
+            <span>
+              <span class="contact-label">Teléfono</span><br />
+              <span class="contact-value">+57 300 846 1116</span>
+            </span>
+          </a>
+
+          <a
+            class="contact-item whatsapp"
+            href="https://wa.me/573008461116?text=Hola!%20Dayana"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp de Dayana"
+          >
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M19.05 4.95A9.84 9.84 0 0 0 12 2.1a9.86 9.86 0 0 0-8.58 15.12L2 22l5.02-1.3A9.89 9.89 0 0 0 12 21.9a9.86 9.86 0 0 0 7.05-16.95ZM12 19.7a8.2 8.2 0 0 1-4.17-1.15l-.3-.18-2.98.77.8-2.9-.2-.3a8.2 8.2 0 0 1-1.24-4.19A8.24 8.24 0 1 1 12 19.7Zm4.62-6.2c-.25-.13-1.48-.73-1.71-.81-.23-.08-.4-.13-.56.13-.17.25-.64.81-.79.98-.15.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75-.15-.25-.02-.38.11-.5.12-.12.25-.29.38-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.09 0 1.23.9 2.42.98 2.59.08.17 1.76 2.79 4.32 3.89.61.26 1.08.42 1.45.54.62.2 1.18.17 1.62.1.49-.07 1.48-.61 1.69-1.18.2-.57.2-1.06.14-1.18-.07-.12-.23-.2-.48-.33Z"/></svg>
+            </span>
+            <span>
+              <span class="contact-label">WhatsApp</span><br />
+              <span class="contact-value">Escríbeme</span>
+            </span>
+          </a>
+        </div>
+      </div>
+        </div>
+    </section>
+    </main>
+    <footer class="site-footer">
+      Hecho con ❤️ por <a href="https://www.instagram.com/dayana.arias/" target="_blank" rel="noopener noreferrer">Daya</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

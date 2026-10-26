@@ -154,9 +154,9 @@ body.bg-variante-b {
   top: 0;
   z-index: 20;
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 70px);
   margin: 0;
-  padding: 24px 1.5rem 96px;
+  padding: 24px 1.5rem 48px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -180,5 +180,5 @@ body.bg-variante-b {
 .contact-block .contact-item:hover,
 .contact-block .contact-item:focus-visible { background: rgba(255, 255, 255, .18); }
 @media (max-width: 768px) {
-  .contact-block { padding: 24px 1rem 84px; }
+  .contact-block { padding: 24px 1rem 48px; }
 }
